@@ -6,16 +6,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3 # Updated to v3
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4 # Updated to v4
         with:
-          python-version: 3.12
+          python-version: "3.12"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest pytest-cov  # Added pytest-cov
       - name: Run tests
-        run: pytest --cov=calculator
+        run: |
+          pytest --cov=calculator --cov-report=term-missing  # Added --cov-report=term-missing
       - name: Run pylint
         run: pylint calculator
