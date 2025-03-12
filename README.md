@@ -25,7 +25,7 @@ This project is an advanced Python-based calculator application developed as par
 
    ```
    python -m venv venv
-   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+   source venv/bin/activate  
    ```
 
 3. Install the required packages:
