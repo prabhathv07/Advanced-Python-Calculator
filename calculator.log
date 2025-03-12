@@ -1,0 +1,25 @@
+2025-03-11 18:43:38,222 - calculator.repl - INFO - Initializing Calculator REPL
+2025-03-11 18:44:01,657 - calculator.repl - INFO - Executing standard operation: 2 + 6
+2025-03-11 18:44:01,658 - calculator.repl - INFO - Result: 8.0
+2025-03-11 18:44:14,834 - calculator.repl - INFO - Executing plugin operation: 2 power 3
+2025-03-11 18:44:14,834 - calculator.repl - INFO - Result: 8.0
+2025-03-11 18:44:23,217 - calculator.repl - ERROR - Unsupported operator: 25
+2025-03-11 18:44:23,218 - calculator.repl - ERROR - Error processing input: Unsupported operator: 25
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/cmd.py", line 214, in onecmd
+    func = getattr(self, 'do_' + cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CalculatorREPL' object has no attribute 'do_25'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/prabhathvinay/advanced_python_calculator/calculator/repl.py", line 73, in default
+    raise ValueError(f"Unsupported operator: {operator_symbol}")
+ValueError: Unsupported operator: 25
+2025-03-11 18:44:45,619 - calculator.repl - INFO - Executing unary operation: sqrt 25
+2025-03-11 18:44:45,620 - calculator.repl - INFO - Result: 5.0
+2025-03-11 18:44:53,988 - calculator.repl - INFO - Displaying history
+2025-03-11 18:45:10,508 - calculator.repl - INFO - Clearing history
+2025-03-11 18:45:16,023 - calculator.repl - INFO - Displaying history
+2025-03-11 18:46:55,207 - calculator.repl - INFO - Exiting calculator
