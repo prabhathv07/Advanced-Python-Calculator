@@ -20,4 +20,4 @@ jobs:
           pylint --version
       - name: Run tests with coverage and linting
         run: |
-          pytest --pylint --cov=calculator --cov-report=term-missing
+          python -m pytest --pylint --cov=calculator --cov-report=term-missing
