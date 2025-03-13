@@ -18,9 +18,9 @@ jobs:
           pip list
           python --version
           pylint --version
-      - name: Run tests with coverage and linting
+      - name: Run tests
         run: |
-          python -m pytest --cov=calculator --cov-report=term-missing
+          python -m pytest
       - name: Run pylint
         run: |
           pylint calculator
