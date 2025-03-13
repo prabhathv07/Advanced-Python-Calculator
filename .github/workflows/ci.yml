@@ -20,7 +20,8 @@ jobs:
           pylint --version
       - name: Run tests
         run: |
-          python -m pytest
-      - name: Run pylint
+          PYTHONPATH=$PYTHONPATH:. python -m pytest tests/
+      - name: Run pylint and coverage report
         run: |
           pylint calculator
+           python -m pytest --cov=calculator --cov-report=term-missing
