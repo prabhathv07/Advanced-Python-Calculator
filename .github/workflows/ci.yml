@@ -8,7 +8,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: "3.12.4"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -20,4 +20,8 @@ jobs:
           pylint --version
       - name: Run tests
         run: |
-          python -m pytest_cov calculator tests/
+          PYTHONPATH=$PYTHONPATH:. python -m pytest tests/
+      - name: Run pylint and coverage report
+        run: |
+          pylint calculator
+           python -m pytest --cov=calculator --cov-report=term-missing
