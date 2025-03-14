@@ -6,6 +6,7 @@ from calculator.calculator import Calculator
 
 logger = logging.getLogger(__name__)
 
+
 class CalculatorREPL(cmd.Cmd):
     prompt = "calc> "
 
@@ -66,7 +67,9 @@ class CalculatorREPL(cmd.Cmd):
                 operator_symbol, operand = parts
                 operation = self.plugin_manager.get_operation(operator_symbol)
                 if operation:
-                    logger.info("Executing unary operation: %s %s", operator_symbol, operand)
+                    logger.info(
+                        "Executing unary operation: %s %s", operator_symbol, operand
+                    )
                     result = operation(float(operand))
                 else:
                     logger.error("Unsupported operator: %s", operator_symbol)
@@ -75,7 +78,12 @@ class CalculatorREPL(cmd.Cmd):
             elif len(parts) == 3:  # Binary operation
                 left, operator_symbol, right = parts
                 if operator_symbol in self.plugin_manager.commands:
-                    logger.info("Executing plugin operation: %s %s %s", left, operator_symbol, right)
+                    logger.info(
+                        "Executing plugin operation: %s %s %s",
+                        left,
+                        operator_symbol,
+                        right,
+                    )
                     operation = self.plugin_manager.get_operation(operator_symbol)
                     result = operation(float(left), float(right))
                 else:
@@ -94,6 +102,7 @@ class CalculatorREPL(cmd.Cmd):
             logger.error("Error processing input: %s", error, exc_info=True)
             print(f"Error: {error}")
             print("Exception block executed!")
+
 
 if __name__ == "__main__":
     CalculatorREPL().cmdloop()

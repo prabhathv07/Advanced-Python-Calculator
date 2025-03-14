@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 def setup_logging():
     log_level = os.getenv("LOG_LEVEL", "INFO")
     log_file = os.getenv("LOG_FILE", "calculator.log")
@@ -17,6 +18,6 @@ def setup_logging():
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         handlers=[
             logging.FileHandler(log_file, mode="w"),  # Overwrite the file
-            logging.StreamHandler()
-        ]
+            logging.StreamHandler(),
+        ],
     )

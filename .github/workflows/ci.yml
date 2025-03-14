@@ -24,4 +24,4 @@ jobs:
       - name: Run pylint and coverage report
         run: |
           pylint calculator
-           python -m pytest --cov=calculator --cov-report=term-missing
+          python -m pytest --cov=calculator --cov-report=term-missing

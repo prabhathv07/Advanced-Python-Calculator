@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
+
 class HistoryManager:
     _instance = None
 
@@ -18,7 +19,9 @@ class HistoryManager:
 
     def add_record(self, operation: str, result: float) -> None:
         """Add a record to the history."""
-        new_record = pd.DataFrame([[operation, result]], columns=["Operation", "Result"])
+        new_record = pd.DataFrame(
+            [[operation, result]], columns=["Operation", "Result"]
+        )
         if self.history.empty:
             self.history = new_record
         else:

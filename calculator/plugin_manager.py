@@ -2,10 +2,11 @@ import importlib
 from pathlib import Path
 from typing import Dict, Callable, Optional, List
 
-class PluginManager:
-    _instance: Optional['PluginManager'] = None
 
-    def __new__(cls) -> 'PluginManager':
+class PluginManager:
+    _instance: Optional["PluginManager"] = None
+
+    def __new__(cls) -> "PluginManager":
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance.commands: List[str] = []

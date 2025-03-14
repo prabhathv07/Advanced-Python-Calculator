@@ -2,6 +2,7 @@ from calculator.logging_config import setup_logging
 import logging
 import os
 
+
 def test_logging_config(tmp_path):
     # Test environment variables
     os.environ["LOG_LEVEL"] = "DEBUG"
