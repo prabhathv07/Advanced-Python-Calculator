@@ -1,6 +1,6 @@
 ## QR Code Output
 
-![GitHub QR Code](qr_codes/github_qr.png)
+![My GitHub QR Code](qr_codes/github_qr.png)
 
 ## Docker Logs Screenshot
 

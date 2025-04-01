@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENV QR_DATA_URL="https://github.com/kaw393939" \
+ENV QR_DATA_URL="https://github.com/prabhathv07" \
   QR_CODE_DIR="/app/qr_codes" \
   QR_CODE_FILENAME="github_qr.png" \
   FILL_COLOR="black" \
