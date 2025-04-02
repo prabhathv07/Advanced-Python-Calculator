@@ -11,7 +11,7 @@ logging.basicConfig(
 def generate_qr_code():
     try:
         # Get environment variables
-        data_url = os.getenv("QR_DATA_URL", "https://github.com/kaw393939")
+        data_url = os.getenv("QR_DATA_URL", "https://github.com/prabhathv07")
         output_dir = os.getenv("QR_CODE_DIR", "qr_codes")
         filename = os.getenv("QR_CODE_FILENAME", "github_qr.png")
         fill_color = os.getenv("FILL_COLOR", "black")
